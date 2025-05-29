@@ -18,7 +18,7 @@ namespace ProjetoEscolaA.Controllers
         public IActionResult ResponsaveisAlunos()
         {
             var data = _alunorespRepositorio.ResponsaveisComAluno();
-            return View();
+            return View(data);
         }
     }
 }
