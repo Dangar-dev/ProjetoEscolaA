@@ -1,7 +1,16 @@
+using ProjetoEscolaA.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//INJEÇÃO DE DEPENDÊNCIA
+builder.Services.AddSingleton<AlunoRespRepositorio>(sp=>
+    new AlunoRespRepositorio(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
 
 var app = builder.Build();
 
